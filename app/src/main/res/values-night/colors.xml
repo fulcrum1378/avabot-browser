@@ -3,7 +3,7 @@
     <color name="CP">#3C87F8</color>
     <color name="CPV">#3C87F8</color>
     <color name="CPO">#3C87F8</color>
-    <color name="CS">#F9F9F9</color>
-    <color name="CSV">#F9F9F9</color>
-    <color name="CSO">#F9F9F9</color>
+    <color name="CS">#111111</color>
+    <color name="CSV">#111111</color>
+    <color name="CSO">#111111</color>
 </resources>

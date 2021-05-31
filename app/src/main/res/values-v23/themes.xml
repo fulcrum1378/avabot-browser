@@ -9,6 +9,7 @@
         <item name="colorSecondaryVariant">@color/CSV</item>
         <item name="colorOnSecondary">@color/CSO</item>
         <item name="android:windowBackground">?attr/colorSecondary</item>
-        <item name="android:statusBarColor">?attr/colorPrimary</item>
+        <item name="android:statusBarColor">?attr/colorSecondary</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 </resources>
