@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.AvabotBrowser" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/CP</item>
+        <item name="colorPrimaryVariant">@color/CPV</item>
+        <item name="colorOnPrimary">@color/CPO</item>
+        <item name="colorSecondary">@color/CS</item>
+        <item name="colorSecondaryVariant">@color/CSV</item>
+        <item name="colorOnSecondary">@color/CSO</item>
+        <item name="colorAccent">?attr/colorOnSecondary</item>
+        <item name="android:windowBackground">?attr/colorSecondary</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>

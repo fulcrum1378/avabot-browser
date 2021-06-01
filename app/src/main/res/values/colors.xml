@@ -10,8 +10,9 @@
     <!-- GLOBAL -->
     <color name="TP">#00000000</color>
     <color name="shadow_1">#55000000</color>
-    <color name="white">#FFF</color>
+    <!--<color name="white">#FFF</color>-->
 
     <!-- Home -->
     <color name="search">@color/CSO</color>
+    <color name="progress">#333C87F8</color>
 </resources>

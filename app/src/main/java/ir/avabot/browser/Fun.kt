@@ -7,6 +7,7 @@ import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
 import android.os.Process
 import android.util.DisplayMetrics
+import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -43,6 +44,14 @@ class Fun {
 
         fun pdcf(c: Context, res: Int) =
             PorterDuffColorFilter(ContextCompat.getColor(c, res), PorterDuff.Mode.SRC_IN)
+
+        fun vis(v: View, b: Boolean = true) {
+            v.visibility = if (b) View.VISIBLE else View.GONE
+        }
+
+        fun vish(v: View, b: Boolean = true) {
+            v.visibility = if (b) View.VISIBLE else View.INVISIBLE
+        }
 
         fun exit(that: AppCompatActivity) {
             that.moveTaskToBack(true)

@@ -1,12 +1,16 @@
 package ir.avabot.browser
 
-import android.annotation.SuppressLint
+import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.inputmethod.EditorInfo
+import android.webkit.WebChromeClient
 import android.webkit.WebSettings
+import android.webkit.WebView
 import android.webkit.WebViewClient
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.ViewModelProvider
+import ir.avabot.browser.Fun.Companion.vis
 import ir.avabot.browser.databinding.HomeBinding
 
 // adb connect 192.168.1.4:
@@ -17,7 +21,6 @@ class Home : AppCompatActivity() {
     private lateinit var b: HomeBinding
     private lateinit var m: Model
 
-    @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         b = HomeBinding.inflate(layoutInflater)
@@ -27,14 +30,32 @@ class Home : AppCompatActivity() {
 
         b.web.apply {
             settings.apply {
+                @Suppress("SetJavaScriptEnabled")
                 javaScriptEnabled = true
                 javaScriptCanOpenWindowsAutomatically = false
                 cacheMode = WebSettings.LOAD_DEFAULT
                 setSupportZoom(true)
             }
             webViewClient = object : WebViewClient() {
-                //override fun on
+                override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
+                    super.onPageStarted(view, url, favicon)
+                    vis(b.progress)
+                }
+
+                override fun onPageFinished(view: WebView?, url: String?) {
+                    super.onPageFinished(view, url)
+                    vis(b.progress, false)
+                }
             }
+            webChromeClient = object : WebChromeClient() {
+                override fun onProgressChanged(view: WebView?, newProgress: Int) {
+                    super.onProgressChanged(view, newProgress)
+                    (b.progress.layoutParams as ConstraintLayout.LayoutParams).apply {
+                        matchConstraintPercentWidth = newProgress / 100f
+                    }
+                }
+            }
+            setBackgroundColor(0)
         }
         b.search.setOnEditorActionListener { v, actionId, _ ->
             when (actionId) {
