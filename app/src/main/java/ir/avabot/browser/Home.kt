@@ -3,6 +3,7 @@ package ir.avabot.browser
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.inputmethod.EditorInfo
 import android.webkit.WebSettings
 import android.webkit.WebViewClient
 import androidx.lifecycle.ViewModelProvider
@@ -34,7 +35,17 @@ class Home : AppCompatActivity() {
             webViewClient = object : WebViewClient() {
                 //override fun on
             }
-            loadUrl("http://82.102.10.134/migratio/")
         }
+        b.search.setOnEditorActionListener { v, actionId, _ ->
+            when (actionId) {
+                EditorInfo.IME_ACTION_GO -> {
+                    b.web.loadUrl(v.text.toString())
+                    v.clearFocus()
+                    true
+                }
+                else -> false
+            }
+        }
+        b.search.requestFocus()
     }
 }

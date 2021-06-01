@@ -7,11 +7,13 @@ import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
 import android.os.Process
 import android.util.DisplayMetrics
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import java.util.*
 import kotlin.system.exitProcess
 
+@Suppress("unused", "MemberVisibilityCanBePrivate")
 class Fun {
     companion object {
         @SuppressLint("StaticFieldLeak")
@@ -26,6 +28,11 @@ class Fun {
             sp = that.getPreferences(Context.MODE_PRIVATE)
             dm = that.resources.displayMetrics
             night = c.resources.getBoolean(R.bool.night)
+
+            that.window.setFlags(
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+            )
         }
 
         fun dp(px: Int) = (dm.density * px.toFloat()).toInt()

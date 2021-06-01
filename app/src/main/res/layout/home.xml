@@ -2,12 +2,52 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Home">
+    style="@style/body"
+    tools:context=".Home"
+    tools:ignore="MissingConstraints">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/nav"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nav"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mainNav"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/statusBarSize">
+
+            <EditText
+                android:id="@+id/search"
+                style="@style/parentConstraint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/TP"
+                android:imeOptions="actionGo"
+                android:inputType="textAutoComplete|textAutoCorrect"
+                android:maxLines="1"
+                android:text="@string/searchDef"
+                android:textColor="@color/search"
+                android:textSize="@dimen/search"
+                app:layout_constraintWidth_percent="0.89" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <WebView
         android:id="@+id/web"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bnv"
+        app:layout_constraintTop_toBottomOf="@id/nav" />
+
+    <View
+        style="@style/shadow_1"
+        app:layout_constraintTop_toBottomOf="@id/nav" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bnv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bnv"
+        app:layout_constraintBottom_toBottomOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

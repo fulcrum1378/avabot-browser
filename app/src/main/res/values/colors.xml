@@ -2,8 +2,16 @@
 <resources>
     <color name="CP">#3C87F8</color>
     <color name="CPV">#3C87F8</color>
-    <color name="CPO">#3C87F8</color>
-    <color name="CS">#F9F9F9</color>
+    <color name="CPO">@color/CSV</color>
+    <color name="CS">#FFF</color>
     <color name="CSV">#F9F9F9</color>
-    <color name="CSO">#F9F9F9</color>
+    <color name="CSO">#BB0A326E</color>
+
+    <!-- GLOBAL -->
+    <color name="TP">#00000000</color>
+    <color name="shadow_1">#55000000</color>
+    <color name="white">#FFF</color>
+
+    <!-- Home -->
+    <color name="search">@color/CSO</color>
 </resources>

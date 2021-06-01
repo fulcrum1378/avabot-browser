@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <!-- #Global -->
+    <dimen name="statusBarSize">30dp</dimen>
+    <dimen name="navigationBarSize">48dp</dimen>
+
+    <!-- Home -->
+    <dimen name="nav">88dp</dimen>
+    <dimen name="bnv">48dp</dimen>
+    <dimen name="search">15sp</dimen>
+</resources>
