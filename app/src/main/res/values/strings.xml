@@ -2,5 +2,5 @@
     <string name="app_name">Avabot Browser</string>
 
     <!-- Home -->
-    <string name="searchDef">http://82.102.10.134/migratio/</string>
+    <string name="searchDef">https://mahdiparastesh.ir</string>
 </resources>

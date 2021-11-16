@@ -13,7 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import ir.avabot.browser.Fun.Companion.vis
 import ir.avabot.browser.databinding.HomeBinding
 
-// adb connect 192.168.1.4:
+// adb connect 192.168.1.20:
 
 class Home : AppCompatActivity() {
     //val tts = TextToSpeech(applicationContext, null, "ir.avabot.tts")
