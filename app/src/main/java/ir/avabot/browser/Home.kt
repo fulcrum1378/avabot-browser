@@ -3,6 +3,7 @@ package ir.avabot.browser
 import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.speech.tts.TextToSpeech
 import android.view.inputmethod.EditorInfo
 import android.webkit.WebChromeClient
 import android.webkit.WebSettings
@@ -16,8 +17,6 @@ import ir.avabot.browser.databinding.HomeBinding
 // adb connect 192.168.1.20:
 
 class Home : AppCompatActivity() {
-    //val tts = TextToSpeech(applicationContext, null, "ir.avabot.tts")
-    //tts.speak("سلام", TextToSpeech.QUEUE_ADD, null, "res")
     private lateinit var b: HomeBinding
     private lateinit var m: Model
 
@@ -68,5 +67,8 @@ class Home : AppCompatActivity() {
             }
         }
         b.search.requestFocus()
+
+        val tts = TextToSpeech(applicationContext, null, "ir.avabot.tts")
+        tts.speak("سلام", TextToSpeech.QUEUE_ADD, null, "res")
     }
 }
